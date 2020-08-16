@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>show</title>
+</head>
+<body>
+{% csrf_token %}
+{% for x in user %}
+<p><span><b>UserName:</b></span>{{x.username}}</p>
+<p><span>mobile: </span>{{x.mobile}}</p>
+<p><span>Email: </span>{{x.email}}</p>
+<p><span>Image: </span>{{x.image}}</p>
+<p><span>Document: </span>{{x.document}}</p>
+<a href="/edit/{{x.id}}">edit/ </a><a href="/delete/{{x.id}}">delete</a>
+</body>
+</html>
+{% endfor %}

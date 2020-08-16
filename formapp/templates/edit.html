@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit</title>
+</head>
+<body>
+<form method="POST" class="post-form" action="/update/{{user.id}}">
+    {% csrf_token %}
+    <input type="text" name="id" value="{{ user.id }}" readonly/>
+    <input type="text" name="username" value="{{ user.username}}"/>
+    <input type="email" name="email" value="{{ user.email}}"/>
+    <input type="text" name="mobile" value="{{ user.mobile}}"/>
+    <img src="{{ user.image.url }}" height="50%" width="30%"><br>
+    <button type="submit" class="btn btn-success">Update</button>
+</form>
+
+</body>
+</html>
